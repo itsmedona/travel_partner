@@ -8,6 +8,7 @@ class MySplash extends StatefulWidget {
   @override
   State<MySplash> createState() => _MySplashState();
 }
+
 class _MySplashState extends State<MySplash> {
   @override
   void initState() {
@@ -27,8 +28,7 @@ class _MySplashState extends State<MySplash> {
         children: [
           SafeArea(
             child: Padding(
-              padding:
-                  EdgeInsets.only(top: 332, left: 84), 
+              padding: EdgeInsets.symmetric(),
               child: Container(
                 height: 56,
                 width: 270,
