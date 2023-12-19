@@ -24,20 +24,16 @@ class _MySplashState extends State<MySplash> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          SafeArea(
-            child: Padding(
-              padding: EdgeInsets.symmetric(),
-              child: Container(
-                height: 56,
-                width: 270,
-                child: Image.asset("assets/images/travelAroundGlobe.png"),
-              ),
+      body: Column(children: [
+        SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(),
+            child: Center(
+              child: Image.asset("assets/images/travelAroundGlobe.png"),
             ),
           ),
-        ],
-      ),
+        ),
+      ]),
     );
   }
 }

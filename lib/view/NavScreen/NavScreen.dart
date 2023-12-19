@@ -1,9 +1,12 @@
-// ignore: file_names
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_partner/view/FavoritesPage/FavoritesPage.dart';
 import 'package:travel_partner/view/HomePage/HomePage.dart';
-import 'package:travel_partner/view/WelcomePage/WelcomePage.dart';
+import 'package:travel_partner/view/MapsPage/MapsPage.dart';
+import 'package:travel_partner/view/ProfilePage/ProfilePage.dart';
+import 'package:travel_partner/view/SearchPage/SearchPage.dart';
+
 
 class NavScreen extends StatefulWidget {
   const NavScreen({super.key});
@@ -16,17 +19,16 @@ class _NavScreenState extends State<NavScreen> {
   int selectedIndex = 0;
   List<Widget> MyWidgetList = [
     HomePage(),
-    WelcomePage(),
-    /*HomeScreen(),
-    SearchScreen(),
-    ComingSoonScreen(),
-    DownloadScreen(),
-    MoreScreen()*/
+ SearchPage(),
+ FavoritesPage(),
+ MapsPage(),
+ ProfilePage()
+    
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:MyWidgetList[selectedIndex],
+      body: MyWidgetList[selectedIndex],
       bottomNavigationBar: CurvedNavigationBar(
           backgroundColor: Color.fromARGB(255, 70, 64, 64),
           //currentIndex: selectedIndex,
@@ -36,15 +38,13 @@ class _NavScreenState extends State<NavScreen> {
             setState(() {});
           },
           items: [
-            CurvedNavigationBarItem(
-                child: Icon(Icons.home),label: "Home"), 
-            CurvedNavigationBarItem(child: Icon(Icons.search), label: "Search"),
-            CurvedNavigationBarItem(
-                child: Icon(Icons.favorite_border), label: "Favorites"),
-            CurvedNavigationBarItem(
-                child: Icon(Icons.map_rounded), label: "Maps"),
-           CurvedNavigationBarItem(child: Icon(Icons.person), label: "Profile"),
+            CurvedNavigationBarItem(child: Icon(Icons.home)),
+            CurvedNavigationBarItem(child: Icon(Icons.search)),
+            CurvedNavigationBarItem(child: Icon(Icons.favorite_border)),
+            CurvedNavigationBarItem(child: Icon(Icons.map_rounded)),
+            CurvedNavigationBarItem(child: Icon(Icons.add_box_outlined)),
+            CurvedNavigationBarItem(child: Icon(Icons.person)),
           ]),
-    ); 
+    );
   }
 }
