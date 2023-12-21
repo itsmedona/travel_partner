@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_partner/view/FavoritesPage/FavoritesPage.dart';
 import 'package:travel_partner/view/HomeAppBar/HomeAppBar.dart';
 import 'package:travel_partner/view/MapsPage/MapsPage.dart';
-import 'package:travel_partner/view/ProfilePage/ProfilePage.dart';
+import 'package:travel_partner/view/MyHomePage/MyHomePage.dart';
 import 'package:travel_partner/view/SearchPage/SearchPage.dart';
 
 class NavScreen extends StatefulWidget {
@@ -21,7 +21,7 @@ class _NavScreenState extends State<NavScreen> {
     SearchPage(),
     FavoritesPage(),
     MapsPage(),
-    ProfilePage()
+    MyHomePage()
   ];
   @override
   Widget build(BuildContext context) {

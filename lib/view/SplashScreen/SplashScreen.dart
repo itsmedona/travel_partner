@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:travel_partner/view/WelcomePage/WelcomePage.dart';
+import 'package:travel_partner/view/MyHomePage/MyHomePage.dart';
+//import 'package:travel_partner/view/WelcomePage/WelcomePage.dart';
 
 class MySplash extends StatefulWidget {
   const MySplash({super.key});
@@ -14,7 +15,7 @@ class _MySplashState extends State<MySplash> {
   void initState() {
     Timer(Duration(seconds: 4), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => WelcomePage()));
+          context, MaterialPageRoute(builder: (context) => MyHomePage()));
     });
     // TODO: implement initState
     super.initState();

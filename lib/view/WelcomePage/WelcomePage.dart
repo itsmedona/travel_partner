@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:travel_partner/view/NavScreen/NavScreen.dart';
+
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -45,10 +45,10 @@ class WelcomePage extends StatelessWidget {
       ),
       body: PageView(
         children: [
-         //HomePage(),
-          NavScreen(),
+          //HomePage(),
         ],
       ),
+      
     );
   }
 }
