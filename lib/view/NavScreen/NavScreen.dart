@@ -2,11 +2,10 @@ import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_partner/view/FavoritesPage/FavoritesPage.dart';
-import 'package:travel_partner/view/HomePage/HomePage.dart';
+import 'package:travel_partner/view/HomeAppBar/HomeAppBar.dart';
 import 'package:travel_partner/view/MapsPage/MapsPage.dart';
 import 'package:travel_partner/view/ProfilePage/ProfilePage.dart';
 import 'package:travel_partner/view/SearchPage/SearchPage.dart';
-
 
 class NavScreen extends StatefulWidget {
   const NavScreen({super.key});
@@ -18,12 +17,11 @@ class NavScreen extends StatefulWidget {
 class _NavScreenState extends State<NavScreen> {
   int selectedIndex = 0;
   List<Widget> MyWidgetList = [
-    HomePage(),
- SearchPage(),
- FavoritesPage(),
- MapsPage(),
- ProfilePage()
-    
+    //HomePage(),
+    SearchPage(),
+    FavoritesPage(),
+    MapsPage(),
+    ProfilePage()
   ];
   @override
   Widget build(BuildContext context) {
@@ -38,12 +36,12 @@ class _NavScreenState extends State<NavScreen> {
             setState(() {});
           },
           items: [
-            CurvedNavigationBarItem(child: Icon(Icons.home)),
-            CurvedNavigationBarItem(child: Icon(Icons.search)),
-            CurvedNavigationBarItem(child: Icon(Icons.favorite_border)),
-            CurvedNavigationBarItem(child: Icon(Icons.map_rounded)),
-            CurvedNavigationBarItem(child: Icon(Icons.add_box_outlined)),
-            CurvedNavigationBarItem(child: Icon(Icons.person)),
+            CurvedNavigationBarItem(child: Icon(Icons.home)),//HomePage
+            CurvedNavigationBarItem(child: Icon(Icons.search)),//SearchPage
+            CurvedNavigationBarItem(child: Icon(Icons.favorite_border)),//FavoritesPage
+            CurvedNavigationBarItem(child: Icon(Icons.map_rounded)),//MapsPage
+            CurvedNavigationBarItem(child: Icon(Icons.add_box_outlined)),//
+            CurvedNavigationBarItem(child: Icon(Icons.person)),//ProfilePage
           ]),
     );
   }

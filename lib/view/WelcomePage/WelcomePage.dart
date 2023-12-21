@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travel_partner/view/HomePage/HomePage.dart';
+
 import 'package:travel_partner/view/NavScreen/NavScreen.dart';
-import 'package:travel_partner/view/SplashScreen/SplashScreen.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -16,33 +15,37 @@ class WelcomePage extends StatelessWidget {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: Text(
-                'Hi Dona...',
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
-              ),
+            Text(
+              'Hi Dona...',
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
             ),
-            Center(
-              child: Text(
-                'Travelling Today ?',
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
-              ),
+            Text(
+              'Travelling Today ?',
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
             ),
           ],
         ),
-        actions: [],
+        /*actions: [IconButton(onPressed: onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => NavScreen()),
+                    (route) => false);, icon: icon)
+                    },
+
+         
+              
+        ],*/
       ),
       body: PageView(
-        //controller: _pageController,
         children: [
-          HomePage(),
+         //HomePage(),
           NavScreen(),
         ],
       ),
