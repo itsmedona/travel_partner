@@ -1,54 +1,59 @@
 import 'package:flutter/material.dart';
-
-
+import 'package:travel_partner/view/MyHomePage/MyHomePage.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        foregroundColor: Colors.black,
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Hi Dona...',
-              textAlign: TextAlign.start,
-              style: TextStyle(
-                  fontSize: 16,
+    return Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(
+        image: AssetImage("assets/images/trvel.png"),
+        fit: BoxFit.cover,
+        opacity: 0.7,
+      )),
+      child: Material(
+        child: SafeArea(
+            child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 65, horizontal: 25),
+          child: Column(
+            children: [
+              Text(
+                "Travel with Us..",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 35,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black),
-            ),
-            Text(
-              'Travelling Today ?',
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
-            ),
-          ],
-        ),
-        /*actions: [IconButton(onPressed: onPressed: () {
-                Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => NavScreen()),
-                    (route) => false);, icon: icon)
-                    },
-
-         
-              
-        ],*/
+                  letterSpacing: 1.5,
+                ),
+              ),
+              SizedBox(height: 30),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MyHomePage(),
+                      ));
+                },
+                child: Ink(
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Icon(
+                    Icons.arrow_forward_ios_outlined,
+                    color: Colors.black38,
+                    size: 20,
+                  ),
+                ),
+              )
+            ],
+          ),
+        )),
       ),
-      body: PageView(
-        children: [
-          //HomePage(),
-        ],
-      ),
-      
     );
   }
 }

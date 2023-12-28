@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-const backGroundColor1=Color(0xff25242A);
-const backGroundColor2=Color(0xff24242E);
-const navColor=Color(0xff313342);
-const primaryColor=Color(0xff3C6FE8);
-const color=Color(0xffC45453);
+class ColorConstant {
+  static Color scfldbgColor = Color(0xFFEDF2F6);
+  static Color backGroundColor1 = Color(0xff25242A);
+  static Color backGroundColor2 = Color(0xff24242E);
+  static Color navColor = Color(0xff313342);
+  static Color primaryColor = Color(0xff3C6FE8);
+  static Color color = Color(0xffC45453);
+}

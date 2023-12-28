@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../ColorConstant/ColorConstant.dart';
+/*import 'package:flutter/material.dart';
 
 const textStyle1=TextStyle(fontSize: 32,color: Colors.black,fontWeight: FontWeight.bold,);
 const textStyle2=TextStyle(fontSize: 18,color: Colors.black,fontWeight: FontWeight.bold,);
@@ -15,3 +13,4 @@ const textStyle7=TextStyle(fontSize: 14,color: Colors.white,fontWeight: FontWeig
 const textStyle8=TextStyle(fontSize: 18,color: color,fontWeight: FontWeight.bold,);
 const textStyle9=TextStyle(fontSize: 16,color: primaryColor,fontWeight: FontWeight.bold,);
 const textStyle10=TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.bold,);
+*/
