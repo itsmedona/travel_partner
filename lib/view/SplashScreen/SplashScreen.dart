@@ -1,45 +1,62 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:travel_partner/view/WelcomePage/WelcomePage.dart';
+import 'package:travel_partner/view/HomePage/HomePage.dart';
+import 'package:travel_partner/view/MyHomePage/MyHomePage.dart';
 
-class MySplash extends StatefulWidget {
+class MySplash extends StatelessWidget {
   const MySplash({super.key});
 
   @override
-  State<MySplash> createState() => _MySplashState();
-}
-
-class _MySplashState extends State<MySplash> {
-  @override
-  void initState() {
-    Timer(Duration(seconds: 4), () {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => WelcomePage()));
-    });
-    // TODO: implement initState
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFFEDF2F6),
-      body: Column(children: [
-        SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(),
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/travelAroundGlobe.png"),
-                  fit: BoxFit.cover,
-                  //opacity: 0.7
-                ),
+    return Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/images/trvel.png"),
+              fit: BoxFit.cover,
+              opacity: 0.7),
+        ),
+        child: Material(
+          color: Colors.transparent,
+          child: SafeArea(
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 65, horizontal: 25),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Travel with Us..",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ));
+                    },
+                    child: Ink(
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Icon(
+                        Icons.arrow_forward_ios_outlined,
+                        color: Colors.black,
+                        size: 25,
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
           ),
-        ),
-      ]),
-    );
+        ));
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:travel_partner/view/SplashScreen/SplashScreen.dart';
 
 void main() {
@@ -16,13 +17,14 @@ class _TravelAppState extends State<TravelApp> {
   @override
   void initState() {
     super.initState();
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
   }
-@override
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(scaffoldBackgroundColor:Colors.white),
-      home: MySplash()
-      );
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(scaffoldBackgroundColor: Colors.white),
+        home: MySplash());
   }
 }
