@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:travel_partner/view/SplashScreen/SplashScreen.dart';
+import 'package:travel_partner/view/Screens/SplashScreen.dart';
+
 
 void main() {
   runApp(TravelApp());

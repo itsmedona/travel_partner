@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travel_partner/view/PostAppBar/PostAppBar.dart';
-import 'package:travel_partner/view/PostBottBar/PostBottBar.dart';
+import 'package:travel_partner/view/Bars/PostAppBar.dart';
+import 'package:travel_partner/view/Bars/PostBottBar.dart';
+
 
 class PostsPage extends StatelessWidget {
   const PostsPage({super.key});

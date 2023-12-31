@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_partner/view/HomePage/HomePage.dart';
+import 'package:travel_partner/view/Pages/HomePage.dart';
 
 class MySplash extends StatelessWidget {
   const MySplash({super.key});

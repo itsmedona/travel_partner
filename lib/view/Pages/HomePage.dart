@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travel_partner/view/HomeAppBar/HomeAppBar.dart';
-import 'package:travel_partner/view/NavScreen/NavScreen.dart';
-import 'package:travel_partner/view/PostsPage/PostsPage.dart';
+import 'package:travel_partner/view/Bars/HomeAppBar.dart';
+import 'package:travel_partner/view/Pages/PostsPage.dart';
+import 'package:travel_partner/view/Screens/NavScreen.dart';
 
 // ignore: must_be_immutable
 class HomePage extends StatelessWidget {
