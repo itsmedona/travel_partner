@@ -1,24 +1,7 @@
+import 'package:hive_flutter/adapters.dart';
 
-import 'package:hive/hive.dart';
-import 'package:travel_partner/view/Widgets/Trip.dart';
-part 'trip_model.g.dart';
-@HiveType(typeId: 0)
+@HiveType(typeId: 1)
 class TripModel {
-  @HiveField(0)
-  final String title;
-
-  @HiveField(1)
-  final List<String> photos;
-
-  @HiveField(2)
-  final String description;
-
-  @HiveField(3)
-  final DateTime date;
-
-  @HiveField(4)
-  final String location;
-
   TripModel({
     required this.title,
     required this.photos,
@@ -26,15 +9,29 @@ class TripModel {
     required this.date,
     required this.location,
   });
+  @HiveField(1)
+  final String title;
+
+  @HiveField(2)
+  final List<String> photos;
+
+  @HiveField(3)
+  final String description;
+
+  @HiveField(4)
+  final DateTime date;
+
+  @HiveField(5)
+  final String location;
+}
 
   // Conversion from Entity to Model
-  factory TripModel.fromEntity(Trip trip) => TripModel(
+  /*factory TripModel.fromEntity(Trip trip) => TripModel(
       title: trip.title,
       photos: trip.photos,
       description: trip.description,
       date: trip.date,
-      location: trip.location
-  );
+      location: trip.location);
 
   // Conversion from Model to Entity
   Trip toEntity() => Trip(
@@ -42,7 +39,6 @@ class TripModel {
       photos: photos,
       description: description,
       date: date,
-      location: location
-  );
-
+      location: location);
 }
+*/

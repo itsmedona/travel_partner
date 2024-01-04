@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_partner/view/Bars/HomeAppBar.dart';
 import 'package:travel_partner/view/Pages/PostsPage.dart';
-import 'package:travel_partner/view/Screens/NavScreen.dart';
 
 // ignore: must_be_immutable
 class HomePage extends StatelessWidget {
@@ -41,9 +40,12 @@ class HomePage extends StatelessWidget {
                           itemBuilder: (BuildContext context, int index) {
                             return InkWell(
                               onTap: () {
-                          Navigator.push(context,MaterialPageRoute(builder: (context)=>PostsPage(),
-                          ),
-                          );
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => PostsPage(),
+                                  ),
+                                );
                               },
                               child: Container(
                                 width: 160,
@@ -132,8 +134,11 @@ class HomePage extends StatelessWidget {
                       padding: EdgeInsets.all(15),
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(context,MaterialPageRoute(builder: (context)=>PostsPage(),
-                          ),
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PostsPage(),
+                            ),
                           );
                         },
                         child: Container(
@@ -197,7 +202,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: NavScreen(),
+      //bottomNavigationBar:NavScreen() ,
     );
   }
 }

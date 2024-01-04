@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_partner/view/Pages/MyHomePage.dart';
+import 'package:travel_partner/view/Pages/HomePage.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -30,11 +30,11 @@ class WelcomePage extends StatelessWidget {
               ),
               SizedBox(height: 30),
               InkWell(
-                onTap: () {
+                onDoubleTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MyHomePage(),
+                        builder: (context) => HomePage(),
                       ));
                 },
                 child: Ink(

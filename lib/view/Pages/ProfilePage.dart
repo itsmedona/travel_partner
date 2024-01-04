@@ -1,4 +1,6 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
+import 'package:travel_partner/view/Screens/AddTripScreen.dart';
+import 'package:travel_partner/view/Screens/MyTripsScreen.dart';
 
 class ProfilePage  extends ConsumerWidget {
   final PageController _pageController = PageController();
@@ -18,7 +20,7 @@ class ProfilePage  extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
              Text(
-              'Hi Fabrice 👋',
+              'Hi User',
               textAlign: TextAlign.start,
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
             ),
@@ -33,8 +35,8 @@ class ProfilePage  extends ConsumerWidget {
             padding: const EdgeInsets.all(20),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(100.0),
-              child: Image.network(
-              profilPic,
+              child: Image.asset(AssetImage(""),
+              
                 fit: BoxFit.cover,
                 height: 60,
                 width: 60,
@@ -79,5 +81,6 @@ class ProfilePage  extends ConsumerWidget {
     );
   }
 }
+*/
 
 
