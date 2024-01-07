@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_partner/view/Pages/SearchPage.dart';
 
 
 import '../Pages/FavoritesPage.dart';
@@ -18,6 +19,7 @@ class _NavScreenState extends State<NavScreen> {
   int selectedIndex = 0;
   List<Widget> MyWidgetList = [
     FavoritesPage(),
+    SearchPage(),
     HomePage(),
     MyTripsScreen(),
     ProfilePage()
@@ -37,6 +39,7 @@ class _NavScreenState extends State<NavScreen> {
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.favorite_border, size: 30), label: "Favorites"),
+              BottomNavigationBarItem(icon: Icon(Icons.search_outlined,size: 30),label: "Search"),
           BottomNavigationBarItem(
               icon: Icon(Icons.home, size: 30), label: "Home"),
           BottomNavigationBarItem(

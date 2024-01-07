@@ -8,12 +8,13 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16),
-      margin: EdgeInsets.symmetric(horizontal: 10,vertical: 15),
+      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(30),
       ),
-      child: Row(children: [
+      child: Row(
+        children: [
           Icon(Icons.search, color: Colors.grey),
           SizedBox(width: 10),
           Expanded(
@@ -30,4 +31,3 @@ class SearchPage extends StatelessWidget {
     );
   }
 }
-

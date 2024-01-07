@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:hive_flutter/adapters.dart';
+import 'package:travel_partner/view/Screens/OnBoardingScreen/OnBoardingPage.dart';
 
 import 'model/trip_model.dart';
 import 'view/Pages/WelcomePage.dart';
-
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,16 +28,26 @@ class _TravelAppState extends State<TravelApp> {
   @override
   void initState() {
     super.initState();
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Brightness.dark,
+      systemNavigationBarColor: Colors.transparent,
+      systemNavigationBarDividerColor: Colors.transparent,
+      systemNavigationBarIconBrightness: Brightness.dark,
+      statusBarIconBrightness: Brightness.dark,
+    ));
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Javoo..",
-      home: WelcomePage(),
+      home: OnboardingPage(),
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(scaffoldBackgroundColor: Colors.white),
+      theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurpleAccent),
+          useMaterial3: true),
       //home: MySplash(),
     );
   }
