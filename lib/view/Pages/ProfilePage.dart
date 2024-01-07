@@ -1,32 +1,42 @@
-/*import 'package:flutter/material.dart';
-import 'package:travel_partner/view/Screens/AddTripScreen.dart';
-import 'package:travel_partner/view/Screens/MyTripsScreen.dart';
+import 'package:flutter/material.dart';
 
-class ProfilePage  extends ConsumerWidget {
+import '../Screens/AddTripScreen.dart';
+import '../Screens/MyTripsScreen.dart';
+
+class ProfilePage extends StatefulWidget {
   final PageController _pageController = PageController();
   final ValueNotifier<int> _currentPage = ValueNotifier<int>(0);
-  
-   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    ref.watch(tripListNotifierProvider.notifier).loadTrips();
-    _pageController.addListener(() {
-      _currentPage.value = _pageController.page!.round();
-    });return Scaffold(
+
+  @override
+  _ProfilePageState createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        elevation: 0,toolbarHeight: 100,
+        elevation: 0,
+        toolbarHeight: 100,
         backgroundColor: Colors.white,
-        title: const Column(
+        title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-             Text(
+            Text(
               'Hi User',
               textAlign: TextAlign.start,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
             ),
             Text(
               'Travelling Today ?',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
             ),
           ],
         ),
@@ -35,8 +45,8 @@ class ProfilePage  extends ConsumerWidget {
             padding: const EdgeInsets.all(20),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(100.0),
-              child: Image.asset(AssetImage(""),
-              
+              child: Image.asset(
+                "your_image_path_here", //  image path ,asset image
                 fit: BoxFit.cover,
                 height: 60,
                 width: 60,
@@ -46,41 +56,64 @@ class ProfilePage  extends ConsumerWidget {
         ],
       ),
       body: PageView(
-        controller: _pageController,
+        controller: widget._pageController,
+        onPageChanged: (index) {
+          widget._currentPage.value = index;
+        },
         children: [
           MyTripsScreen(),
-          AddTripScreen(),
+          AddTripScreen(
+              title: '',
+              imageUrl: '',
+              description: '',
+              date: '',
+              location: '',
+              onDelete: () {}),
           Text("Maps"),
         ],
       ),
-      bottomNavigationBar: ValueListenableBuilder<int>(
-        valueListenable: _currentPage,
-        builder: (context, pageIndex, child) {
-          return BottomNavigationBar(
-            currentIndex: pageIndex, // Set the current page index here
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.list),
-                label: 'My Trips',
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.deepPurpleAccent,
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.add),
-                label: 'Add Trip',
+              child: Text(
+                'Your Travel Partner...',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.map),
-                label: 'Maps',
-              ),
-            ],
-            onTap: (index) {
-              _pageController.jumpToPage(index);
-            },
-          );
-        },
+            ),
+            ListTile(
+              leading: Icon(Icons.list),
+              title: Text('My Trips'),
+              onTap: () {
+                widget._pageController.jumpToPage(0);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.add),
+              title: Text('Add Trip'),
+              onTap: () {
+                widget._pageController.jumpToPage(1);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Maps'),
+              onTap: () {
+                widget._pageController.jumpToPage(2);
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-*/
-
-

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:hive_flutter/adapters.dart';
-import 'package:travel_partner/model/trip_model.dart';
-import 'package:travel_partner/view/Pages/HomePage.dart';
-import 'package:travel_partner/view/Pages/WelcomePage.dart';
+
+import 'model/trip_model.dart';
+import 'view/Pages/WelcomePage.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

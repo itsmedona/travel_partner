@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_partner/view/Pages/SearchPage.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({Key? key});
@@ -10,26 +11,6 @@ class HomeAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          InkWell(
-            onTap: () {},
-            child: Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black12,
-                    blurRadius: 6,
-                  ),
-                ],
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Icon(
-                Icons.sort_rounded,
-                size: 28,
-              ),
-            ),
-          ),
           Row(
             children: [
               Icon(
@@ -56,8 +37,14 @@ class HomeAppBar extends StatelessWidget {
                 ],
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Icon(
-                Icons.search,
+              child: IconButton(
+                icon: Icon(Icons.search),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SearchPage()),
+                  );
+                },
               ),
             ),
           ),

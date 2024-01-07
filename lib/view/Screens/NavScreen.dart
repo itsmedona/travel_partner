@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:travel_partner/view/Pages/FavoritesPage.dart';
-import 'package:travel_partner/view/Pages/HomePage.dart';
-import 'package:travel_partner/view/Pages/MapsPage.dart';
 
-import 'package:travel_partner/view/Pages/PostsPage.dart';
+
+import '../Pages/FavoritesPage.dart';
+import '../Pages/HomePage.dart';
+import '../Pages/ProfilePage.dart';
+import 'MyTripsScreen.dart';
+
 
 class NavScreen extends StatefulWidget {
-  const NavScreen({Key? key}) : super(key: key);
+  const NavScreen({super.key});
 
   @override
   State<NavScreen> createState() => _NavScreenState();
@@ -14,38 +16,33 @@ class NavScreen extends StatefulWidget {
 
 class _NavScreenState extends State<NavScreen> {
   int selectedIndex = 0;
-  List<Widget> myWidgetList = [
-    HomePage(),
-    MapsPage(),
-    HomePage(),
-    PostsPage(),
+  List<Widget> MyWidgetList = [
     FavoritesPage(),
+    HomePage(),
+    MyTripsScreen(),
+    ProfilePage()
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: myWidgetList[selectedIndex],
+      body: MyWidgetList[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black38,
         currentIndex: selectedIndex,
+        type: BottomNavigationBarType.fixed,
         onTap: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
+          selectedIndex = index;
+          setState(() {});
         },
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline, size: 30), label: "profile"),
+              icon: Icon(Icons.favorite_border, size: 30), label: "Favorites"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_border, size: 30), label: "favorites"),
+              icon: Icon(Icons.home, size: 30), label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.home, size: 30), label: "home"),
+              icon: Icon(Icons.list, size: 30), label: "Trips"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.location_city_outlined, size: 30),
-              label: "location"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.list, size: 30), label: "trips"),
+              icon: Icon(Icons.person_outline, size: 30), label: "Profile"),
         ],
       ),
     );

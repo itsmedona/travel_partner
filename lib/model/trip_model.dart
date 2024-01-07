@@ -25,20 +25,3 @@ class TripModel {
   final String location;
 }
 
-  // Conversion from Entity to Model
-  /*factory TripModel.fromEntity(Trip trip) => TripModel(
-      title: trip.title,
-      photos: trip.photos,
-      description: trip.description,
-      date: trip.date,
-      location: trip.location);
-
-  // Conversion from Model to Entity
-  Trip toEntity() => Trip(
-      title: title,
-      photos: photos,
-      description: description,
-      date: date,
-      location: location);
-}
-*/
