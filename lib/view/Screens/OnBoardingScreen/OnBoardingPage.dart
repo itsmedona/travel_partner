@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_partner/view/Pages/WelcomePage.dart';
+import 'package:travel_partner/view/Screens/NavScreen.dart';
 
 import 'OnBoardingData.dart';
 
@@ -107,7 +107,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
           if (currentIndex == controller.items.length - 1) {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => WelcomePage()),
+              MaterialPageRoute(builder: (context) => NavScreen()),
             );
           } else {
             setState(() {

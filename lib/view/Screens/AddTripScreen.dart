@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 class AddTripScreen extends StatelessWidget {
   final String imageUrl;
   final String title;
@@ -10,7 +8,7 @@ class AddTripScreen extends StatelessWidget {
   final String location;
   final VoidCallback onDelete;
 
-AddTripScreen({
+  AddTripScreen({
     required this.imageUrl,
     required this.title,
     required this.description,
@@ -31,11 +29,9 @@ AddTripScreen({
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(description),
-                ]
-            ),
+                ]),
           );
-        }
-    );
+        });
   }
 
   @override
@@ -54,16 +50,15 @@ AddTripScreen({
             Expanded(
               flex: 2,
               child: GestureDetector(
-                onTap: (){
+                onTap: () {
                   showAlertDialog(context);
                 },
                 child: ClipRRect(
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20.0),
-                      topRight: Radius.circular(20.0)
-                  ),
-                  child: Image.network(
-                    imageUrl,
+                      topRight: Radius.circular(20.0)),
+                  child: Image.asset(
+                    "assets/images/Marine-Drive-Kochi-1.png",
                     fit: BoxFit.cover,
                     height: double.infinity,
                     width: double.infinity,
@@ -71,22 +66,6 @@ AddTripScreen({
                 ),
               ),
             ),
-            /*Positioned(
-              right: 10,
-              top: 10,
-              child: IconButton(
-                icon: Icon(Icons.delete, color: Colors.white),
-                onPressed: onDelete,
-              ),
-            ),
-            Positioned(
-              left: 16,
-              bottom: 60,
-              child: Text(
-                description,
-                style: TextStyle(color: Colors.white),
-              ),
-            ),*/
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
@@ -105,13 +84,15 @@ AddTripScreen({
                           location,
                           style: TextStyle(
                             fontSize: 16,
-                            fontWeight: FontWeight.bold,),
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                         Text(
                           date,
                           style: TextStyle(
                             fontSize: 16,
-                            fontWeight: FontWeight.bold,),
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
