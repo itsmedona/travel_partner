@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
                                   borderRadius: BorderRadius.circular(15),
                                   image: DecorationImage(
                                     image: AssetImage(
-                                      "",
+                                      "assets/images/trvel.png",
                                     ),
                                     fit: BoxFit.cover,
                                     colorFilter: ColorFilter.mode(

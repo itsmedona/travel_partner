@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:travel_partner/view/Screens/NavScreen.dart';
-
 import 'OnBoardingData.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -26,7 +25,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       ),
     );
   }
-
+  
   //Body
   Widget body() {
     return Expanded(

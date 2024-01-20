@@ -4,7 +4,6 @@ import 'package:travel_partner/view/Pages/SearchPage.dart';
 import '../Pages/FavoritesPage.dart';
 import '../Pages/HomePage.dart';
 import '../Pages/ProfilePage.dart';
-import 'MyTripsScreen.dart';
 
 class NavScreen extends StatefulWidget {
   const NavScreen({super.key});
@@ -16,10 +15,9 @@ class NavScreen extends StatefulWidget {
 class _NavScreenState extends State<NavScreen> {
   int selectedIndex = 0;
   List<Widget> MyWidgetList = [
+    HomePage(),
     FavoritesPage(),
     SearchPage(),
-    HomePage(),
-    MyTripsScreen(),
     ProfilePage()
   ];
   @override
@@ -41,8 +39,6 @@ class _NavScreenState extends State<NavScreen> {
               icon: Icon(Icons.favorite_border, size: 30), label: "Favorites"),
           BottomNavigationBarItem(
               icon: Icon(Icons.search_outlined, size: 30), label: "Search"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.list, size: 30), label: "Trips"),
           BottomNavigationBarItem(
               icon: Icon(Icons.person_outline, size: 30), label: "Profile"),
         ],
