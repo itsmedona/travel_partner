@@ -41,8 +41,8 @@ class _FavoritesPageState extends State<FavoritesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Favorites App'),
-        ),
+        title: Text('Favorites App'),
+      ),
       body: SafeArea(
         child: Center(
           child: Column(

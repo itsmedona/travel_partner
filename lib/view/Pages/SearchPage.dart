@@ -1,31 +1,92 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class SearchPage extends StatelessWidget {
-  final TextEditingController _controller = TextEditingController();
-  SearchPage({super.key});
+class SearchPage extends StatefulWidget {
+  @override
+  _SearchPageState createState() => _SearchPageState();
+}
+
+class _SearchPageState extends State<SearchPage> {
+  TextEditingController _searchController = TextEditingController();
+  String lastSearch = "";
+
+  @override
+  void initState() {
+    super.initState();
+    _loadSearchHistory();
+  }
+
+  void _loadSearchHistory() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      lastSearch = prefs.getString('lastSearch') ?? "";
+    });
+  }
+
+  void _saveSearchHistory(String query) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('lastSearch', query);
+  }
+
+  void _onSearch(String query) {
+    setState(() {
+      if (query.isNotEmpty) {
+        lastSearch = query;
+        _saveSearchHistory(query);
+        // Handle the search logic here
+      }
+    });
+  }
+
+  void _clearSearchHistory() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.remove('lastSearch');
+    setState(() {
+      lastSearch = "";
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(30),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Search Page'),
       ),
-      child: Row(
+      body: Column(
         children: [
-          Icon(Icons.search, color: Colors.grey),
-          SizedBox(width: 10),
-          Expanded(
+          Padding(
+            padding: const EdgeInsets.all(8.0),
             child: TextField(
-              controller: _controller,
+              controller: _searchController,
+              onChanged: _onSearch,
               decoration: InputDecoration(
-                hintText: "Search destination...",
-                border: InputBorder.none,
+                hintText: 'Search...',
               ),
             ),
           ),
+          if (lastSearch.isNotEmpty)
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Last Search:',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Chip(
+                  label: Text(lastSearch),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextButton(
+                    onPressed: _clearSearchHistory,
+                    child: Text('Clear History'),
+                  ),
+                ),
+              ],
+            ),
         ],
       ),
     );
