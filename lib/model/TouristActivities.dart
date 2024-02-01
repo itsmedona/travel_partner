@@ -1,33 +1,35 @@
 import 'dart:convert';
 
-Map<String, TravelDetails> travelDetailsFromJson(String str) => Map.from(json.decode(str)).map((k, v) => MapEntry<String, TravelDetails>(k, TravelDetails.fromJson(v)));
+Map<String, TravelDetails> travelDetailsFromJson(String str) =>
+    Map.from(json.decode(str)).map((k, v) =>
+        MapEntry<String, TravelDetails>(k, TravelDetails.fromJson(v)));
 
 class TravelDetails {
-    String? name;
-    String? city;
-    String? state;
-    String? country;
-    String? description;
-    String? directions;
-    String? lat;
-    String? lon;
-    String? parentId;
-    Activities? activities;
+  String? name;
+  String? city;
+  String? state;
+  String? country;
+  String? description;
+  String? directions;
+  String? lat;
+  String? lon;
+  String? parentId;
+  Activities? activities;
 
-    TravelDetails({
-        this.name,
-        this.city,
-        this.state,
-        this.country,
-        this.description,
-        this.directions,
-        this.lat,
-        this.lon,
-        this.parentId,
-        this.activities,
-    });
+  TravelDetails({
+    this.name,
+    this.city,
+    this.state,
+    this.country,
+    this.description,
+    this.directions,
+    this.lat,
+    this.lon,
+    this.parentId,
+    this.activities,
+  });
 
-    factory TravelDetails.fromJson(Map<String, dynamic> json) => TravelDetails(
+  factory TravelDetails.fromJson(Map<String, dynamic> json) => TravelDetails(
         name: json["name"],
         city: json["city"],
         state: json["state"],
@@ -37,10 +39,12 @@ class TravelDetails {
         lat: json["lat"],
         lon: json["lon"],
         parentId: json["parent_id"],
-        activities: json["activities"] == null ? null : Activities.fromJson(json["activities"]),
-    );
+        activities: json["activities"] == null
+            ? null
+            : Activities.fromJson(json["activities"]),
+      );
 
-    Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
         "name": name,
         "city": city,
         "state": state,
@@ -50,55 +54,54 @@ class TravelDetails {
         "lat": lat,
         "lon": lon,
         "parent_id": parentId,
-        
-    };
+      };
 }
 
 class Activities {
-    Hiking? hiking;
-    MountainBiking? mountainBiking;
+  Hiking? hiking;
+  MountainBiking? mountainBiking;
 
-    Activities({
-        this.hiking,
-        this.mountainBiking,
-    });
+  Activities({
+    this.hiking,
+    this.mountainBiking,
+  });
 
-    factory Activities.fromJson(Map<String, dynamic> json) => Activities(
+  factory Activities.fromJson(Map<String, dynamic> json) => Activities(
         hiking: json["hiking"] == null ? null : Hiking.fromJson(json["hiking"]),
-        mountainBiking: json["mountain biking"] == null ? null : MountainBiking.fromJson(json["mountain biking"]),
-    );
-
-
+        mountainBiking: json["mountain biking"] == null
+            ? null
+            : MountainBiking.fromJson(json["mountain biking"]),
+      );
 }
 
 class Hiking {
-    String? url;
-    String? length;
-    String? description;
-    String? name;
-    String? rank;
-    String? rating;
-    String? thumbnail;
-    String? activityType;
-    String? activityTypeName;
-    HikingAttribs? attribs;
-    String? placeActivityId;
+  String? url;
+  String? length;
+  String? description;
+  String? name;
+  String? rank;
+  String? rating;
+  String? thumbnail;
+  String? activityType;
+  String? activityTypeName;
+  HikingAttribs? attribs;
+  String? placeActivityId;
 
-    Hiking({
-        this.url,
-        this.length,
-        this.description,
-        this.name,
-        this.rank,
-        this.rating,
-        this.thumbnail,
-        this.activityType,
-        this.activityTypeName,
-        this.attribs,
-        this.placeActivityId,
-    });
+  Hiking({
+    this.url,
+    this.length,
+    this.description,
+    this.name,
+    this.rank,
+    this.rating,
+    this.thumbnail,
+    this.activityType,
+    this.activityTypeName,
+    this.attribs,
+    this.placeActivityId,
+  });
 
-    factory Hiking.fromJson(Map<String, dynamic> json) => Hiking(
+  factory Hiking.fromJson(Map<String, dynamic> json) => Hiking(
         url: json["url"],
         length: json["length"],
         description: json["description"],
@@ -108,55 +111,53 @@ class Hiking {
         thumbnail: json["thumbnail"],
         activityType: json["activity_type"],
         activityTypeName: json["activity_type_name"],
-        attribs: json["attribs"] == null ? null : HikingAttribs.fromJson(json["attribs"]),
+        attribs: json["attribs"] == null
+            ? null
+            : HikingAttribs.fromJson(json["attribs"]),
         placeActivityId: json["place_activity_id"],
-    );
-
-    
+      );
 }
 
 class HikingAttribs {
-    String? length;
+  String? length;
 
-    HikingAttribs({
-        this.length,
-    });
+  HikingAttribs({
+    this.length,
+  });
 
-    factory HikingAttribs.fromJson(Map<String, dynamic> json) => HikingAttribs(
+  factory HikingAttribs.fromJson(Map<String, dynamic> json) => HikingAttribs(
         length: json["length"],
-    );
-
-    
+      );
 }
 
 class MountainBiking {
-    String? url;
-    String? length;
-    String? description;
-    String? name;
-    String? rank;
-    String? rating;
-    String? thumbnail;
-    String? activityType;
-    String? activityTypeName;
-    MountainBikingAttribs? attribs;
-    String? placeActivityId;
+  String? url;
+  String? length;
+  String? description;
+  String? name;
+  String? rank;
+  String? rating;
+  String? thumbnail;
+  String? activityType;
+  String? activityTypeName;
+  MountainBikingAttribs? attribs;
+  String? placeActivityId;
 
-    MountainBiking({
-        this.url,
-        this.length,
-        this.description,
-        this.name,
-        this.rank,
-        this.rating,
-        this.thumbnail,
-        this.activityType,
-        this.activityTypeName,
-        this.attribs,
-        this.placeActivityId,
-    });
+  MountainBiking({
+    this.url,
+    this.length,
+    this.description,
+    this.name,
+    this.rank,
+    this.rating,
+    this.thumbnail,
+    this.activityType,
+    this.activityTypeName,
+    this.attribs,
+    this.placeActivityId,
+  });
 
-    factory MountainBiking.fromJson(Map<String, dynamic> json) => MountainBiking(
+  factory MountainBiking.fromJson(Map<String, dynamic> json) => MountainBiking(
         url: json["url"],
         length: json["length"],
         description: json["description"],
@@ -166,26 +167,25 @@ class MountainBiking {
         thumbnail: json["thumbnail"],
         activityType: json["activity_type"],
         activityTypeName: json["activity_type_name"],
-        attribs: json["attribs"] == null ? null : MountainBikingAttribs.fromJson(json["attribs"]),
+        attribs: json["attribs"] == null
+            ? null
+            : MountainBikingAttribs.fromJson(json["attribs"]),
         placeActivityId: json["place_activity_id"],
-    );
-
-    
+      );
 }
 
 class MountainBikingAttribs {
-    String? length;
-    String? nightride;
+  String? length;
+  String? nightride;
 
-    MountainBikingAttribs({
-        this.length,
-        this.nightride,
-    });
+  MountainBikingAttribs({
+    this.length,
+    this.nightride,
+  });
 
-    factory MountainBikingAttribs.fromJson(Map<String, dynamic> json) => MountainBikingAttribs(
+  factory MountainBikingAttribs.fromJson(Map<String, dynamic> json) =>
+      MountainBikingAttribs(
         length: json["length"],
         nightride: json["nightride"],
-    );
-
-    
+      );
 }
