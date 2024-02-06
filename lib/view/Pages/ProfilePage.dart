@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../Screens/AddTripScreen.dart';
 import '../Screens/MyTripsScreen.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -59,13 +57,13 @@ class ProfilePage extends StatelessWidget {
         body: TabBarView(
           children: [
             MyTripsScreen(),
-            AddTripScreen(
+           /* AddTripScreen(
                 title: '',
                 imageUrl: '',
                 description: '',
                 date: '',
                 location: '',
-                onDelete: () {}),
+                onDelete: () {}),*/
           
           ],
         ),

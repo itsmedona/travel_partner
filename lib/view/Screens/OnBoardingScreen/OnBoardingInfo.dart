@@ -4,7 +4,5 @@ class OnBoardingInfo {
   final String image;
 
   OnBoardingInfo(
-      {required this.title,
-       required this.description,
-        required this.image});
+      {required this.title, required this.description, required this.image});
 }

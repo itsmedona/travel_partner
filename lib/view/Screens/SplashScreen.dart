@@ -56,6 +56,7 @@ class MySplash extends StatelessWidget {
               ),
             ),
           ),
-        ));
+        )
+        );
   }
 }

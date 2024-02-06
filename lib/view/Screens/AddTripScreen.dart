@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 
-class AddTripScreen extends StatelessWidget {
+
+/*class AddTripScreen extends StatelessWidget {
   final String imageUrl;
   final String title;
   final String description;
@@ -122,3 +122,4 @@ class AddTripScreen extends StatelessWidget {
     );
   }
 }
+*/
